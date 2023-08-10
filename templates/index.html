@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UNBOXED Solar Energy Prediction</title>
+</head>
+<body>
+    <h1>Solar Energy Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="temperature">Temperature (°C):</label>
+        <input type="number" name="temperature" step="0.1" ><br><br>
+        <label for="humidity">Humidity (%):</label>
+        <input type="number" name="humidity" step="0.1" ><br><br>
+        <label for="cloud_cover">Cloud Cover (%):</label>
+        <input type="number" name="cloud_cover" step="0.1" ><br><br>
+        <label for="panel_capacity">Panel Capacity (kW):</label>
+        <input type="number" name="panel_capacity" step="0.1" ><br><br>
+        <label for="irradiation">Irradiation (W/m²):</label>
+        <input type="number" name="irradiation" step="0.1"><br><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+    <p>{{ prediction }}</p>
+    {% endif %}
+</body>
+</html>
